@@ -1,3 +1,6 @@
+// using function constructor to create object using the "new" keyword to mimic other languages that 
+// do not implement prototypical inheritance
+
 function Person(n, d) {
     this.name = n;
     this.dob = new Date(d);

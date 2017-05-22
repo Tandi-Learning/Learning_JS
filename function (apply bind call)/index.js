@@ -14,7 +14,7 @@ function calculateAge(gender) {
 }
 
 
-// call
+// apply
 document.write('<strong><u>Apply</u></strong></br>')
 document.write(calculateAge.apply(me, ['M']) + '</br>')
 document.write(calculateAge.apply(wife, ['M']) + '</br></br>')
