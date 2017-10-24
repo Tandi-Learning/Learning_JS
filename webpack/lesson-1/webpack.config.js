@@ -1,10 +1,19 @@
+var path = require('path');
+
 module.exports = {
+    context: path.resolve(''),
     entry: [
-        "./app.js",
-        "./utils.js"
+        "./js/app.js",
+        "./js/utils.js"
     ],
     output: {
+        path: path.resolve('build/js/'),
+        publicPath: 'public/assets/js/',
         filename: "bundle.js"
+    },
+    devServer: {
+        contentBase: path.join ('/public'), // or (__dirname + '/public')
+        port: 3000,
     },
     module: {
         // with webpack 1.x we use preLoaders
