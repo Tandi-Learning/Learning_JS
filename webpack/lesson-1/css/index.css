@@ -1,0 +1,9 @@
+.navbar {
+    background-image: linear-gradient(to bottom, #0088CC 0, #0F0F0F 100%);
+    height: 50px;
+    font-size: 20pt;
+}
+
+a {
+    color: white;
+}

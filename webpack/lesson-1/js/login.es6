@@ -6,6 +6,10 @@ let login = (username, password) => {
     }
 };
 
-module.exports = {
+// module.exports = {
+//     login
+// }
+
+export {
     login
 }
