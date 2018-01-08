@@ -15,7 +15,17 @@ function addClickEvent() {
     var cells = document.querySelectorAll(".cell");
     for (var i = 0; i < cells.length; i++) {
         cells[i].addEventListener("click", cellClicked);
+        cells[i].addEventListener("mouseover", cellMouseOver);
+        cells[i].addEventListener("mouseout", cellMouseOut);
     }
+}
+
+function cellMouseOver(e) {
+    e.target.className = "cell orange";
+}
+
+function cellMouseOut(e) {
+    e.target.className = "cell blue";
 }
 
 function cellClicked(e) {
