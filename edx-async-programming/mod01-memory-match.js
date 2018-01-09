@@ -49,21 +49,21 @@ function cellClicked(e) {
 }
 
 function compareNumbers() {
-    var first = document.getElementById(firstCell);
-    var second = document.getElementById(secondCell);
-
     if (firstNumber != secondNumber) {
         setTimeout(resetFirstAndSecondCells, 1000);
-    } else {
-        console.log(firstNumber + ' - ' + secondNumber)
     }
 }
 
 function resetFirstAndSecondCells() {
+    var first = document.getElementById(firstCell);
+    var second = document.getElementById(secondCell);
+
     first.className = "cell blue";
     first.innerHTML = "";
+    firstNumber = 0;
     second.className = "cell blue";
     second.innerHTML = "";
+    secondNumber = 0;
 }
 
 function populateGrid() {    
