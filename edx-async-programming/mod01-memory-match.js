@@ -18,6 +18,21 @@ function addClickEvent() {
         cells[i].addEventListener("mouseover", cellMouseOver);
         cells[i].addEventListener("mouseout", cellMouseOut);
     }
+    document.getElementById("btnReset").addEventListener("click", gameReset);
+}
+
+function gameReset() {
+    var cells = document.querySelectorAll(".cell");
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].className = "cell blue";
+        cells[i].innerHTML = "";
+    }
+    arrNumbers = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    firstCell = 0;
+    secondCell = 0;
+    firstNumber = 0;
+    secondNumber = 0;
+    populateGrid();
 }
 
 function cellMouseOver(e) {
@@ -52,6 +67,8 @@ function compareNumbers() {
     if (firstNumber != secondNumber) {
         setTimeout(resetFirstAndSecondCells, 1000);
     }
+    firstNumber = 0;
+    secondNumber = 0;
 }
 
 function resetFirstAndSecondCells() {
@@ -60,10 +77,8 @@ function resetFirstAndSecondCells() {
 
     first.className = "cell blue";
     first.innerHTML = "";
-    firstNumber = 0;
     second.className = "cell blue";
     second.innerHTML = "";
-    secondNumber = 0;
 }
 
 function populateGrid() {    

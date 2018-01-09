@@ -4,6 +4,7 @@
     grid-template-rows: repeat(3, 70px);
     grid-gap: 10px;
     color: white;
+    margin-bottom: 20px;
 }
 
 .wrapper > div {
