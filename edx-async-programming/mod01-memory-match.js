@@ -21,14 +21,20 @@ function addClickEvent() {
 }
 
 function cellMouseOver(e) {
-    e.target.className = "cell orange";
+    if (e.target.className.indexOf("red") < 0) 
+        e.target.className = "cell orange";
 }
 
 function cellMouseOut(e) {
+    if (e.target.className.indexOf("red") < 0) 
     e.target.className = "cell blue";
 }
 
 function cellClicked(e) {
+    if (e.target.className.indexOf("red") > 0)
+        return;
+
+    e.target.className = "cell red";
     e.target.innerHTML = arrNumbers[e.target.id - 1];
     if (firstNumber === 0) {
         firstNumber = arrNumbers[e.target.id - 1];
@@ -37,11 +43,27 @@ function cellClicked(e) {
     else {
         secondNumber = arrNumbers[e.target.id - 1];
         secondCell = e.target.id;
+
+        compareNumbers();
     }
+}
 
-    e.target.innerHTML = arrNumbers[e.target.id - 1];
+function compareNumbers() {
+    var first = document.getElementById(firstCell);
+    var second = document.getElementById(secondCell);
 
-    console.log(firstCell + '=' + firstNumber + ' - ' + secondCell + ':' + secondNumber);
+    if (firstNumber != secondNumber) {
+        setTimeout(resetFirstAndSecondCells, 1000);
+    } else {
+        console.log(firstNumber + ' - ' + secondNumber)
+    }
+}
+
+function resetFirstAndSecondCells() {
+    first.className = "cell blue";
+    first.innerHTML = "";
+    second.className = "cell blue";
+    second.innerHTML = "";
 }
 
 function populateGrid() {    
